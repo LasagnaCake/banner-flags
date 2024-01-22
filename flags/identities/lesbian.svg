@@ -1,0 +1,137 @@
+<svg
+	version="1.1"
+	xmlns="http://www.w3.org/2000/svg"
+	width="100%"
+	height="100%"
+	style="
+			/* The font family. MUST be a monospace font. */
+		font-family: Courier, monospace;
+			/* The animation's speed. */
+		--anim-speed: 4s;
+			/* The character count in the message. */
+		--character-count: 13;
+			/* The whitespace count in between message repetitions. */
+		--whitespace-count: 3;
+		--scroll-size: calc((var(--character-count) + var(--whitespace-count)) * -1ch);
+	"
+>
+	<title>Lesbian Pride Flag Banner</title>
+	<desc>Lesbian pride flag, with marquee (by LasagnaCake)</desc>
+	<style>
+		svg {
+			font-family: Courier, monospace;
+		}
+		:root {
+			--anim-speed: 4s;
+			--character-count: 13;
+			--whitespace-count: 3;
+			--scroll-size: calc((var(--character-count) + var(--whitespace-count)) * -1ch);
+		}
+		@keyframes marquee {
+			0%		{transform: translate(calc(var(--scroll-size) * 2), 0%);	}
+			100%	{transform: translate(var(--scroll-size), 0%);				}
+		}
+		.scrollable-text {
+			animation: marquee var(--anim-speed) linear infinite;
+		}
+	</style>
+	<svg>
+		<rect
+			x="0"
+			y="0"
+			width="100%"
+			height="50%"
+			style="fill:#D52D00;"
+		/>
+		<rect
+			x="0"
+			y="50%"
+			width="100%"
+			height="50%"
+			style="fill:#A30262;"
+		/>
+		<rect
+			x="0"
+			y="14.2857%"
+			width="100%"
+			height="14.2857%"
+			style="fill:#EF7627;"
+		/>
+		<rect
+			x="0"
+			y="28.5714%"
+			width="100%"
+			height="14.2857%"
+			style="fill:#FF9A56;"
+		/>
+		<rect
+			x="0"
+			y="57.1428%"
+			width="100%"
+			height="14.2857%"
+			style="fill:#D162A4;"
+		/>
+		<rect
+			x="0"
+			y="71.4285%"
+			width="100%"
+			height="14.2857%"
+			style="fill:#B55690;"
+		/>
+		<rect
+			x="0"
+			y="42.8571%"
+			width="100%"
+			height="14.2857%"
+			style="fill:white;"
+		/>
+	</svg>
+	<svg
+		viewBox="0 0 100 100"
+		preserveAspectRatio="xMinYMid meet"
+		width="100%"
+		height="100%"
+	>
+		<!--<defs>
+			<filter id="shadow" x="0" y="0">
+				<feOffset result="o1" in="SourceGraphic" dx="0" dy="2" />
+				<feOffset result="o2" in="SourceGraphic" dx="0" dy="-2" />
+				<feOffset result="o3" in="SourceGraphic" dx="-2" dy="0" />
+				<feOffset result="o4" in="SourceGraphic" dx="2" dy="0" />
+				<feBlend in="o1" in2="o2" result="o12" mode="normal" />
+				<feBlend in="o3" in2="o4" result="o34" mode="normal" />
+				<feBlend in="o12" in2="o34" result="boost" mode="normal"/>
+				<feGaussianBlur in="boost" out="boost2" stdDeviation="1.5" />
+				<feBlend in="boost2" in2="boost2" result="boost3" mode="normal"/>
+				<feBlend in="boost3" in2="boost3" result="boost4" mode="normal"/>
+				<feBlend in="boost4" in2="boost4" result="boost5" mode="normal"/>
+				<feGaussianBlur in="boost5" stdDeviation=".5" />
+			</filter>
+		</defs>
+		<text
+			class="scrollable-text"
+			fill="white"
+			font-size="175%"
+			font-weight="bold"
+			text-anchor="left"
+			filter="url(#shadow)" 
+			x="0%"
+			y="56%"
+			xml:space="preserve"
+		>
+			Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?
+		</text>-->
+		<text
+			class="scrollable-text"
+			fill="maroon"
+			font-size="175%"
+			font-weight="bold"
+			text-anchor="left"
+			x="0%"
+			y="56%"
+			xml:space="preserve"
+		>
+			Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?   Sorry, mommy?
+		</text>
+	</svg>
+</svg>

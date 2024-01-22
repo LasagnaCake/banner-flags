@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<title>Flag Customizer</title>
+	<script src="js/main.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/main.css" defer/>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+	<!--
+		<object data="flags/countries/palestine.svg" type="image/svg+xml" width="100%" height="80vh"></object><br><br>
+	-->
+	<header id="target-svg" class="display">
+		Please select a flag!
+	</header>
+	<main>
+		<div class="page">
+			<div class="no-print">
+				<h1>Choose flag</h1>
+				Choose a flag to generate a custom banner, or download directly.<br><br>
+				<label for="banner-flag-in"><strong>Flag</strong></label><br>
+				<select id="banner-flag-in" oninput="assertFlag(); updateFlag()">
+					<option value="">Select a flag...</option>
+					<optgroup label="Custom">
+						<option value="@custom">Custom Flag...</option>
+					</optgroup>
+					<optgroup label="Countries">
+						<option value="flags/countries/palestine.svg">Palestine</option>
+					</optgroup>
+					<optgroup label="Queer Identities">
+						<option value="flags/identities/progress.svg" selected>* Progress</option>
+						<option value="flags/identities/lesbian.svg">Lesbian</option>
+						<option value="flags/identities/gaymale.svg">Gay Male</option>
+						<option value="flags/identities/bisexual.svg">Bisexual</option>
+						<option value="flags/identities/transgender.svg">Transgender</option>
+					</optgroup>
+					<optgroup label="Kinks & Groups">
+					</optgroup>
+				</select><br><br>
+				<label for="custom-flag-in"><strong>Custom Flag</strong></label><br>
+				<input type="file" id="custom-flag-in" accept="image/svg+xml" onchange="setCustomFlag(this);"/><br><br>
+			</div>
+			<div class="no-print" onchange="updateFlag()">
+				<div class="banner-settings">
+					<h1>Generate</h1>
+					Generate a custom banner with a custom flag.<br><br>
+					<button onclick="updateFlag()">Update</button><br><br>
+					<button onclick="setDefaultsForFlag()">Flag Defaults</button><br><br>
+					<label for="message-in"oninput="updateFlag()"><strong>Message</strong></label><br>
+					<input
+						type="text"
+						id="message-in"
+						placeholder= "Message goes here..."
+						aria-placeholder="Message goes here..."
+					/><br><br>
+					<label for="whitespace-in"><strong>Whitespace Count</strong></label><br>
+					<input type="number" id="whitespace-in" value="3" placeholder="3" oninput="preventNullOrZero(this); updateFlag()" min="0"/><br><br>
+					<label for="scroll-speed-in"><strong>Text Scroll Speed</strong></label><br>
+					<input type="number" id="scroll-speed-in" value="5" placeholder="5" oninput="preventNullOrZero(this); updateFlag()" min="0"/><br><br>
+					<label for="font-in"><strong>Font</strong></label><br>
+					<select id="font-in" oninput="updateFlag()">
+						<optgroup label="Serif">
+							<option value="Courier" style="font-family: Courier, monospace;">Courier</option>
+							<option value="Courier New" style="font-family: 'Courier New', monospace;">Courier New</option>
+						</optgroup>
+						<optgroup label="Sans Serif">
+							<option value="Consolas" style="font-family: Consolas;">Consolas</option>
+							<option value="Lucida Console" style="font-family: 'Lucida Console', monospace;">Lucida Console</option>
+							<option value="DejaVu Sans Mono" style="font-family: 'DejaVu Sans Mono', monospace;">DejaVu Sans Mono</option>
+							<option value="Liberation Mono" style="font-family: 'Liberation Mono', monospace;">Liberation Mono</option>
+						</optgroup>
+						<optgroup label="Automatic">
+							<option value="monospace" style="font-family: monospace;">Any</option>
+						</optgroup>
+					</select><br><br>
+					<button class="generate-button" onclick="generateSVG()">Generate</button><br><br>
+				</div>
+			</div>
+			<div class="no-print">
+				<h1>Download</h1>
+				Download the SVG without customizing.<br><br>
+				<button class="generate-button" onclick="downloadSVG()">Download</button><br><br>
+			</div>
+		</div>
+	</main><br>
+	<footer class="foreword">
+		<h1>How to add the banner to your page</h1>
+		<h2>For tumblr</h2>
+		If done via this method, you MUST change the <code>height="100%"</code> at the top of the file to your desired height!
+		<ol>
+			<li>Open SVG file on text editor;</li>
+			<li>Copy the entirety of its contents;</li>
+			<li>Open blog customization;</li>
+			<li>On your theme, click "Edit HTML";</li>
+			<li>Make a backup of your theme in case something goes wrong;</li>
+			<li>Paste the SVG's contents somewhere within the <code>&lt;body&gt;&lt;/body&gt;</code> tag (preferably before any other page content);</li>
+			<li>Done!</li>
+		</ol>
+		<h2>For custom website</h2>
+		If you don't feel like adding a file, you can do the same way as for tumblr - via copying the file's contents directly into the page.
+		<ol>
+			<li>Add SVG file somewhere in website directory;</li>
+			<li>
+				Add
+				<code>&lt;object data="path/to/file.svg" type="image/svg+xml" width="100%" height="{YOUR_PREFERRED_HEIGHT}"&gt;&lt;/object&gt;</code> 
+				within the
+				<code>&lt;body&gt;&lt;/body&gt;</code>
+				tag (preferably before any other page content);
+			</li>
+			<li>Done!</li>
+		</ol>
+	</footer>
+</body>
+</html>
